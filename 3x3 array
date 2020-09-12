@@ -1,0 +1,36 @@
+#include<stdio.h>
+int main()
+{
+    int a[3][3];                                       // 2D array declaration
+    int i, j, sum=0;                          
+    printf("Input element in the matrix: \n");
+    for(i=0; i<3; i++) 
+    {
+        for(j=0;j<3;j++) 
+        {
+          printf("element - [%d],[%d]:", i, j);
+          scanf("%d", &a[i][j]);
+        } 
+    }
+    printf("\nThe matrix is: \n\n");                  // Displaying array elements
+    for (i = 0; i < 3; i++) 
+    { 
+        for (j = 0; j < 3; j++) 
+        {
+          printf(" %2d  ", *(*(a + i) + j)); 
+        }
+    printf("\n");
+    }
+    for(i=0;i<3;i++)                                  // Trace of the matrix
+		{
+			for(j=0;j<3;j++)
+			{
+				if(i==j)
+				{
+					sum = sum + a[i][j];
+				}
+			}
+		}
+		printf("\nSum of all diagonal elements is %d",sum);
+    return 0;
+}
